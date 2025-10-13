@@ -70,7 +70,7 @@ const ThumbnailGenerator = () => {
         <div className='w-full lg:col-span-4 col-span-full'>
           {
             loading ?
-              <div className='w-full bg-secondary rounded-sm flex items-center justify-center h-[300px] bg-black border-white border-2 border-opacity-10'>
+              <div className='w-full rounded-sm flex items-center justify-center h-[300px] bg-black border-white border-2 border-opacity-10'>
                 <Loader2 className='animate-spin text-white' />
                 <h2 className='text-white'>Espera mientras se genera tu miniatura</h2>
               </div>
@@ -85,7 +85,7 @@ const ThumbnailGenerator = () => {
           <div className='flex gap-2 justify-center mt-2 lg:flex-nowrap flex-wrap'>
             <label htmlFor="referenceImageUpload" className='cursor-pointer w-full'>
               {!referenceImagePreview ? (
-                <div className='bg-secondary p-2 bg-black text-white border-opacity-10 border-white gap-2 border-2 rounded-md flex justify-center items-center '>
+                <div className='p-2 bg-black text-white border-opacity-10 border-white gap-2 border-2 rounded-md flex justify-center items-center '>
                   <ImagePlus className='opacity-50'/>
                   <h5 className='text-sm opacity-50'>Imagen de Referencia</h5>
                 </div>
@@ -100,7 +100,7 @@ const ThumbnailGenerator = () => {
 
             <label htmlFor="includeFace" className='cursor-pointer w-full relative'>
               {!faceImagePreview ? (
-                <div className='bg-secondary p-2 border-2 border-white border-opacity-10 bg-black text-white rounded-md flex gap-2 justify-center items-center w-full'>
+                <div className=' p-2 border-2 border-white border-opacity-10 bg-black text-white rounded-md flex gap-2 justify-center items-center w-full'>
                   <User className='opacity-50'/>
                   <h5 className='text-sm opacity-50'>Incluir Cara</h5>
                 </div>
