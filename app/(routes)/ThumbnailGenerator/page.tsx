@@ -75,7 +75,7 @@ const ThumbnailGenerator = () => {
                 <h2 className='text-white'>Espera mientras se genera tu miniatura</h2>
               </div>
               :
-              <div className='w-full bg-secondary rounded-sm flex items-center justify-center h-[400px] bg-black border-white border-2 border-opacity-10 overflow-hidden'>
+              <div className='w-full rounded-sm flex items-center justify-center h-[400px] bg-black border-white border-2 border-opacity-10 overflow-hidden'>
                 {
                   outputThumbnailImage && <Image alt='imagen-de-referencia' width={400} height={300} className='aspect-video rounded-sm w-full' src={outputThumbnailImage} />
                 }
