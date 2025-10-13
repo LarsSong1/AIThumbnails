@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {
-  ClerkProvider,
+  ClerkProvider, 
 } from '@clerk/nextjs'
+import {dark} from '@clerk/themes'
 import Provider from "./provider";
 
 
@@ -29,10 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: dark,
+    }}>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
         >
           <Provider>
             {children}

@@ -14,6 +14,7 @@ import {
 import { Home, Image as ImageIcon, Key, Lightbulb, Plug, ScanSearch, Search, Settings, SmartphoneCharging } from "lucide-react"
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { SignOutButton, UserButton } from '@clerk/nextjs'
 
 const items = [
     {
@@ -85,6 +86,9 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter className='bg-black'>
+                <div className='p-2'>
+                    <UserButton/>
+                </div>
                 <h2 className='p-2 text-gray-400 text-xs'>Copyright @Jair Gavilanez @Damaris Zambrano</h2>
             </SidebarFooter>
         </Sidebar>

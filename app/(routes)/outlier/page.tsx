@@ -31,11 +31,11 @@ function Outlier() {
     return (
         <section>
             <PageTitle title='Outlier' subtitle='Busca y encuentra videos con alto rendimiento en comparacion con el resto de videos de una canal' />
-            <div className='w-full mt-4 flex  border-2 border-black rounded-md px-4 py-2'>
-                <input className='w-full outline-none' type="text" placeholder='Ingresa que quieres buscar' onChange={e => setUserInput(e.target.value)} />
-                <Button onClick={onSearch} disabled={loading || !userInput}>
+            <div className='w-full mt-4 flex  border-2 border-black rounded-md py-2 relative'>
+                <input className='w-full outline-none p-2 bg-black border-2 text-sm placeholder:opacity-50 text-white text-opacity-50 border-white border-opacity-10 rounded-sm' type="text" placeholder='Ingresa que quieres buscar' onChange={e => setUserInput(e.target.value)} />
+                <Button className='absolute right-0 rounded-sm cursor-pointer' onClick={onSearch} disabled={loading || !userInput}>
                     {
-                        loading ? <Loader2 className='animate-spin' /> : <Search />
+                        loading ? <Loader2 className='animate-spin text-black'  /> : <Search className='text-black' />
                     }
                 </Button>
             </div>
