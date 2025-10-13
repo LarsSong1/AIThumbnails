@@ -46,25 +46,25 @@ const items = [
         url: '/ContentGenerator',
         icon: Lightbulb,
     },
-    {
-        title: "Billing",
-        url: "#",
-        icon: Settings,
-    },
+    // {
+    //     title: "Billing",
+    //     url: "#",
+    //     icon: Settings,
+    // },
 ]
 
 export function AppSidebar() {
     const path = usePathname();
     return (
-        <Sidebar>
-            <SidebarHeader>
-                <div className='p-4'>
-                    <Image src={'./logo.svg'} alt='logo' width={100} height={100}
-                        className='w-full h-full' />
-                    <h2 className='text-sm text-gray-400 text-center'>Build Awesome</h2>
+        <Sidebar className=''>
+            <SidebarHeader className='bg-black'>
+                <div className='p-4 flex flex-col justify-center items-start'>
+                    <Image src={'./AIToolsLogo.svg'} alt='logo' width={20} height={20}
+                        className='w-[100px] h-auto' />
+                    <h2 className='text-sm text-gray-400 text-start'>AI Generation Tools</h2>
                 </div>
             </SidebarHeader>
-            <SidebarContent>
+            <SidebarContent className='bg-black'>
                 <SidebarGroup>
 
                     <SidebarGroupContent>
@@ -72,8 +72,8 @@ export function AppSidebar() {
                             {items.map((item, index) => (
                                 // <SidebarMenuItem key={item.title} className='p-2'>
                                 //     <SidebarMenuButton asChild className=''>
-                                <a href={item.url} key={index} className={`p-2 text-lg flex gap-2 items-center
-                                 hover:bg-gray-100 rounded-lg ${path.includes(item.url) && 'bg-gray-200ß'}`}>
+                                <a href={item.url} key={index} className={`p-2 text-md flex gap-2 items-center
+                                 hover:bg-green-600 text-white hover:text-black  ${path.includes(item.url) && 'bg-gray-200ß'}`}>
                                     <item.icon className='h-5 w-5' />
                                     <span>{item.title}</span>
                                 </a>
@@ -84,7 +84,7 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter>
+            <SidebarFooter className='bg-black'>
                 <h2 className='p-2 text-gray-400 text-xs'>Copyright @Jair Gavilanez @Damaris Zambrano</h2>
             </SidebarFooter>
         </Sidebar>

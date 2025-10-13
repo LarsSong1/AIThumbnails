@@ -5,7 +5,7 @@ import PageTitle from '@/components/PageTitle'
 import { Button } from '@/components/ui/button'
 import { Content, VideoInfoWithOutlier } from '@/types/ThumbnailSearch';
 import axios from 'axios';
-import { Loader2, Settings } from 'lucide-react';
+import { Loader2, Settings, TestTubeDiagonal } from 'lucide-react';
 import React, { useState } from 'react'
 import ContentDisplay from './_components/ContentDisplay';
 
@@ -47,11 +47,11 @@ function ContentGenerator() {
     return (
         <div>
             <PageTitle title='Generación de Contenido' subtitle='Genera contenido con IA para optimiar tus videos' />
-            <div className='w-full mt-4 flex  border-2 border-black rounded-md px-4 py-2'>
-                <input className='w-full outline-none' type="text" placeholder='Ingresa las caracteristicas del contenido que quieres generar' onChange={e => setUserInput(e.target.value)} />
-                <Button onClick={onGenerate} disabled={loading || !userInput}>
+            <div className='w-full mt-4 flex  border-2 border-black rounded-md  py-2 relative'>
+                <input className='w-full outline-none p-2 bg-black border-2 text-sm placeholder:opacity-50 text-white text-opacity-50 border-white border-opacity-10 rounded-sm' type="text" placeholder='Ingresa las caracteristicas del contenido que quieres generar z-0' onChange={e => setUserInput(e.target.value)} />
+                <Button className='absolute right-0 rounded-sm z-10 cursor-pointer' onClick={onGenerate} disabled={loading || !userInput}>
                     {
-                        loading ? <Loader2 className='animate-spin' /> : <Settings />
+                        loading ? <Loader2 className='animate-spin text-black' /> : <TestTubeDiagonal className='text-black'/>
                     }
                 </Button>
             </div>
