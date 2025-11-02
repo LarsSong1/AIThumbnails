@@ -2,10 +2,10 @@ import { handleDownloadImage } from '@/utils/downloadAction';
 import { Download } from 'lucide-react';
 import React from 'react'
 
-function DownloaderButton({thumbnailUrl, thumbnailId}: {thumbnailUrl: string, thumbnailId: string}) {
+function DownloaderButton({thumbnailUrl, thumbnailId, className}: {thumbnailUrl: string, thumbnailId: string, className?: string}) {
     return (
         <button
-            className='bg-black z-10 p-2 rounded-sm absolute right-2 top-2 hover:bg-gray-800'
+            className={`bg-black z-10 p-2 rounded-sm absolute right-2 top-2 hover:bg-gray-800 ${className}`}
             onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();

@@ -1,3 +1,4 @@
+import DownloaderButton from '@/app/_components/DownloaderButton'
 import { VideoCardProps } from '@/types/ThumbnailSearch'
 import { Eye, ThumbsUpIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -7,7 +8,8 @@ function VideoCard({ videoInfo }: VideoCardProps) {
 
     
     return (
-        <div className='lg:w-[350px] w-[250px] mx-auto cursor-pointer overflow-hidden rounded-sm'>
+        <div className='lg:w-[350px] w-[250px] mx-auto cursor-pointer overflow-hidden rounded-sm relative'>
+            <DownloaderButton thumbnailId={videoInfo.id.toString()} thumbnailUrl={videoInfo.thumbnail} className='top-0'/>
             <Image src={videoInfo.thumbnail} alt={videoInfo.title} width={250} height={200} className='aspect-video  mx-auto lg:w-[350px] w-[250px] h-auto object-cover' />
             <div className='flex flex-col justify-between border-2 border-white border-opacity-10 p-2'>
                 <div className='px-2'>

@@ -241,43 +241,6 @@ export const GenerateAiThumbnail = inngest.createFunction(
   }
 )
 
-// const PromptForContentGenerator = `
-// Eres un experto del enganche de videos en Youtube, SEO, estratega y un asistente de contenido creativo.
-// -Dame cuatro titulos de videos optimizados para SEO
-// -Dame el SEO Score de cada titulo (1 al 100)
-// -Dame una descripcion corta que complemente el tema seleccionado 
-// -Dame 10 tags relevantes que complemente el tema seleccionado
-// -Dame dos diferentes prompts de miniaturas para generar miniaturas profesionales
-
-// UserInput: {{user_input}}
-
-// -Retorna el resultado en formato JSON (JSON only y manten los nombres de las claves):
-// json
-// Copy
-// Edit
-// {
-//   "titles": [
-//   {
-//   "title": "Title 1",
-//   "seo_score": 87
-//   },
-//   {
-//   "title": "Title 2",
-//   "seo_score": 82
-//   }
-//  ],
-//  "description":  "Escribe una profesional y enganchadora descripcion para videos de youtube basados en el input",
-//  "tags": [
-//   "Tag 1",
-//   "Tag 2"
-//  ],
-//  "prompts": [
-//  "Prompt 1",
-//  "Prompt 2"
-//  ]
-// }
-
-// `
 const PromptForContentGenerator = `
 Eres un experto en engagement de videos de Youtube, SEO y estratega de contenido creativo.
 
@@ -287,8 +250,8 @@ Genera contenido optimizado basado en el siguiente input del usuario:
 - 10 tags relevantes y específicos
 - DOS prompts diferentes para generar miniaturas profesionales y llamativas
 
-UserInput: {{user_input}}
 
+UserInput: {{user_input}}
 IMPORTANTE: Retorna SOLO el JSON sin texto adicional, manten las claves en ingles, no le cambies nada al formato json, sin markdown, sin explicaciones.
 
 Formato JSON requerido:

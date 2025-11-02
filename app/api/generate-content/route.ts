@@ -1,7 +1,30 @@
+import { db } from "@/configs/db";
+import { AiContentTable } from "@/configs/schema";
 import { inngest } from "@/inngest/client";
 import { currentUser } from "@clerk/nextjs/server";
+import { desc, eq } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
-import { run } from "node:test";
+
+
+
+
+
+
+
+
+export async function GET (request: NextRequest) {
+    const user = await currentUser();
+    const result = await db.select().from(AiContentTable)
+    // @ts-ignore
+    .where(eq(AiContentTable.userEmail, user?.primaryEmailAddress?.emailAddress))
+    .orderBy(desc(AiContentTable.id));
+
+    return NextResponse.json(result)
+}
+
+
+
+
 
 export async function POST (request: NextRequest) {
     const {userInput} = await request.json()
@@ -17,3 +40,6 @@ export async function POST (request: NextRequest) {
 
     return NextResponse.json({runId: result.ids[0]})
 }
+
+
+
